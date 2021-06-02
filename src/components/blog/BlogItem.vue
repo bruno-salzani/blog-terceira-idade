@@ -55,21 +55,9 @@
 			},
 		},
 
-		data() {
-			return {
-				BlogItem: {
-					title: this.title,
-					id: this.id,
-					date: this.date,
-					content: this.content,
-					image: this.image,
-				},
-			};
-		},
-
 		methods: {
 			onPostClick() {
-				this.$emit('postClicked', this.BlogItem);
+				this.$emit('postClicked',this.id);
 			},
 		},
 	};

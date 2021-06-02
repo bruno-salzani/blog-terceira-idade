@@ -1,89 +1,107 @@
 <template>
-	<div class="bg-gray-100">
+	<div class="bg-white">
 		<header class="p-6">
 			<div class="flex justify-between">
 				<span class="text-lg font-bold uppercase">Terceira Idade</span>
 				<div></div>
 			</div>
 		</header>
-		<base-carousel></base-carousel>
+		<div class="bg-gray-100">
+			<div class="gap-6 mx-auto py-14 max-w-7xl fixed-grid">
+				<banner-item 
+					v-for="(post, index) in fixedPosts"
+					:key="index"
+					v-bind="post"
+					:class="'post-' + (index + 1)"
+					@postClicked="onPostClick"
+				></banner-item>
+			</div>
+		</div>
+		
 		<main class="pt-10 pb-20 mx-auto">
 			<div class="flex flex-col items-center gap-10 px-2">
-				<div class="py-12 text-center">
+				<div class="py-16 text-center">
 					<h2 class="mb-2 text-xl font-thin tracking-wider uppercase">Dicas para a terceira idade</h2>
 					<h1 class="font-serif text-5xl font-bold tracking-tight text-gray-700">
 						Envelhecendo com qualidade de vida
 					</h1>
+					<span class="px-10 border-b-4 border-gray-700"></span>
 				</div>
 				<blog-item
-					v-for="(post, index) in blog.posts"
+					v-for="(post, index) in posts"
 					:key="index"
-					:title="post.title"
-					:id="post.id"
-					:date="post.date"
-					:content="post.content"
-					:image="post.image"
+					v-bind="post"
 					@postClicked="onPostClick"
 				></blog-item>
 			</div>
 		</main>
 		<BaseModal
-			v-show="isModalVisible"
+			v-if="selected != null"
+			v-bind="selected"
 			@close="closeModal"
-			:title="this.title"
-			:id="this.id"
-			:date="this.date"
-			:content="this.content"
-			:image="this.image"
 		/>
 	</div>
 </template>
 
 <script>
 	import BlogItem from '../components/blog/BlogItem';
+	import BannerItem from '../components/shared/BannerItem';
 	import BaseModal from '../components/shared/BaseModal';
-	import BaseCarousel from '../components/shared/BaseCarousel';
 	import BlogPosts from '../repository/blog.json';
 
 	export default {
+		name: 'Home',
+		
 		components: {
 			'blog-item': BlogItem,
-			'base-carousel': BaseCarousel,
+			'banner-item': BannerItem,
 			BaseModal,
 		},
 
 		data() {
 			return {
-				blog: BlogPosts,
-				isModalVisible: false,
-				title: '',
-				id: 0,
-				date: '',
-				content: '',
-				image: '',
+				posts: BlogPosts.posts,
+				selected: null,
+				fixed: [1,2,3,4,5],
 			};
 		},
 
+		computed: {
+			fixedPosts: function() {
+				return this.posts.filter(post => this.fixed.includes(post.id));
+			}
+		},
+
 		methods: {
-			onPostClick(obj) {
-				this.title = obj.title;
-				this.id = obj.id;
-				this.date = obj.date;
-				this.content = obj.content;
-				this.image = obj.image;
-
-				this.showModal();
-			},
-			showModal() {
-				this.isModalVisible = true;
-
+			onPostClick(id) {
+				this.selected = this.posts.find(post=>post.id==id);
 				document.documentElement.style.overflow = 'hidden';
 			},
 			closeModal() {
-				this.isModalVisible = false;
-
+				this.selected = null;
 				document.documentElement.style.overflow = 'auto';
 			},
 		},
+
+		mounted() {
+			this.selected = this.posts.find(post=>post.id==this.$route.query.post);			
+		}
 	};
 </script>
+
+<style  lang="postcss" scoped>
+.fixed-grid {
+   	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: theme('spacing.52') theme('spacing.52');
+	grid-template-areas:
+		"post1 post2 post3"
+		"post4 post2 post5";
+}
+
+.post-1 { grid-area: post1; }
+.post-2 { grid-area: post2; }
+.post-3 { grid-area: post3; }
+.post-4 { grid-area: post4; }
+.post-5 { grid-area: post5; }
+</style>
