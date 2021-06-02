@@ -1,3 +1,5 @@
 module.exports = {
-    publicPath: '/terceiraidade/'
-}
+    publicPath: process.env.NODE_ENV === 'production'
+      ? '/blog-enfermagem-senac/'
+      : '/'
+  }
