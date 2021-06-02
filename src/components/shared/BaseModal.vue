@@ -1,5 +1,5 @@
 <template>
-	<div class="fixed inset-0 z-20 flex items-center justify-center bg-black bg-opacity-80">
+	<div class="fixed inset-0 z-20 flex items-center justify-center bg-black bg-opacity-90">
 		<div
 			class="absolute flex items-center justify-center w-10 h-10 rounded-full top-5 right-5 hover:bg-white hover:bg-opacity-10"
 		>
@@ -38,32 +38,44 @@
 						Saude
 					</span>
 				</div>
-				<div class="ml-1 font-light text-gray-500 dark:text-gray-400">Compartilhar</div>
+				<div class="ml-1 font-light text-gray-500 dark:text-gray-400">
+					<social-share :title="`${title}`" :id="`${id}`" :content="`${content}`"></social-share>
+				</div>
 			</div>
 		</div>
 	</div>
 </template>
 
 <script>
+	import SocialShare from '../shared/SocialShare'
+
 	export default {
-		name: 'BaseModal',
+		name: 'BaseModal',	
+
+		components: {
+			'social-share': SocialShare
+		},
 
 		props: {
 			title: {
+				required: true,
 				type: String,
-				default: '',
+			},
+			id: {
+				required: true,
+				type: Number,
 			},
 			date: {
+				required: true,
 				type: String,
-				default: '',
 			},
 			content: {
+				required: true,
 				type: String,
-				default: '',
 			},
 			image: {
+				required: true,
 				type: String,
-				default: '',
 			},
 		},
 

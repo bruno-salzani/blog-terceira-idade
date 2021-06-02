@@ -1,13 +1,13 @@
 <template>
-	<div class="bg-white">
-		<header class="p-6">
+	<div class="bg-gray-100">
+		<header class="p-8">
 			<div class="flex justify-between">
-				<span class="text-lg font-bold uppercase">Terceira Idade</span>
+				<span class="text-xl font-bold">Terceira Idade</span>
 				<div></div>
 			</div>
 		</header>
-		<div class="bg-gray-100">
-			<div class="gap-6 mx-auto py-14 max-w-7xl fixed-grid">
+		<div>
+			<div class="fixed-grid">
 				<banner-item 
 					v-for="(post, index) in fixedPosts"
 					:key="index"
@@ -17,10 +17,9 @@
 				></banner-item>
 			</div>
 		</div>
-		
-		<main class="pt-10 pb-20 mx-auto">
+		<main class="pb-20 mx-auto ">
 			<div class="flex flex-col items-center gap-10 px-2">
-				<div class="py-16 text-center">
+				<div class="py-20 text-center">
 					<h2 class="mb-2 text-xl font-thin tracking-wider uppercase">Dicas para a terceira idade</h2>
 					<h1 class="font-serif text-5xl font-bold tracking-tight text-gray-700">
 						Envelhecendo com qualidade de vida
@@ -93,7 +92,7 @@
 .fixed-grid {
    	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
-	grid-template-rows: theme('spacing.52') theme('spacing.52');
+	grid-template-rows: theme('spacing.64') theme('spacing.64');
 	grid-template-areas:
 		"post1 post2 post3"
 		"post4 post2 post5";
