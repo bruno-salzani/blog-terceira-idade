@@ -1,31 +1,26 @@
 <template>
-	<div
-		class="max-w-6xl px-5 pt-6 pb-4 bg-white rounded-lg shadow cursor-pointer dark:bg-gray-800"
-		@click="onPostClick"
-	>
-		<div class="flex mb-4">
-			<div class="flex flex-col mx-auto mb-2">
-				<img
-					class="object-cover w-40 h-40 max-w-xl mx-auto rounded-full"
-					:src="require(`@/assets/img/blog/${image}`)"
-					alt=""
-				/>
-				<div class="mt-2 ml-2 leading-none text-center">
-					<span class="block text-base font-medium leading-snug text-black dark:text-gray-100">
-						{{ title }}
-					</span>
-					<span class="ml-1 text-sm font-light text-gray-500 dark:text-gray-400">{{ date }}</span>
-				</div>
-			</div>
+	<div class="flex max-w-5xl bg-white rounded-sm shadow cursor-pointer" @click="onPostClick">
+		<div>
+			<img class="object-cover max-w-xl mx-auto w-52 h-52" :src="require(`@/assets/img/blog/${image}`)" alt="" />
 		</div>
-		<p class="leading-snug text-justify text-gray-800 dark:text-gray-100 md:leading-normal">{{ content }}</p>
-		<div class="flex items-center justify-between mt-5">
-			<div class="flex">
-				<span class="px-3 py-1 text-xs font-bold text-blue-600 uppercase bg-blue-200 rounded-full">
-					Saude
+		<div class="px-4">
+			<div class="mt-4 mb-3">
+				<span class="block text-base font-medium leading-snug text-black">
+					{{ title }}
 				</span>
+				<span class="text-sm font-light text-gray-500">{{ date }}</span>
 			</div>
-			<div class="ml-1 font-light text-gray-500 dark:text-gray-400">Compartilhar</div>
+			<p class="overflow-hidden text-justify text-gray-800" max-lenght>
+				{{ content }}
+			</p>
+			<div class="flex items-baseline justify-between pt-2 mt-5 border-t">
+				<div class="flex">
+					<span class="px-3 py-1 text-xs font-bold text-blue-600 uppercase bg-blue-200 rounded-full">
+						Saude
+					</span>
+				</div>
+				<div class="ml-1 font-light text-gray-500">{{ views }} Vizualizações</div>
+			</div>
 		</div>
 	</div>
 </template>
@@ -38,6 +33,10 @@
 				type: String,
 			},
 			id: {
+				required: true,
+				type: Number,
+			},
+			views: {
 				required: true,
 				type: Number,
 			},
@@ -57,8 +56,16 @@
 
 		methods: {
 			onPostClick() {
-				this.$emit('postClicked',this.id);
+				this.$emit('postClicked', this.id);
 			},
 		},
 	};
 </script>
+
+<style scoped>
+	p {
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+	}
+</style>

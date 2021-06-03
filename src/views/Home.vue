@@ -1,14 +1,8 @@
 <template>
 	<div class="bg-gray-100">
-		<header class="p-8">
-			<div class="flex justify-between">
-				<span class="text-xl font-bold">Terceira Idade</span>
-				<div></div>
-			</div>
-		</header>
 		<div>
 			<div class="fixed-grid">
-				<banner-item 
+				<banner-item
 					v-for="(post, index) in fixedPosts"
 					:key="index"
 					v-bind="post"
@@ -17,7 +11,7 @@
 				></banner-item>
 			</div>
 		</div>
-		<main class="pb-20 mx-auto ">
+		<main class="pb-20 mx-auto">
 			<div class="flex flex-col items-center gap-10 px-2">
 				<div class="py-20 text-center">
 					<h2 class="mb-2 text-xl font-thin tracking-wider uppercase">Dicas para a terceira idade</h2>
@@ -34,11 +28,7 @@
 				></blog-item>
 			</div>
 		</main>
-		<BaseModal
-			v-if="selected != null"
-			v-bind="selected"
-			@close="closeModal"
-		/>
+		<BaseModal v-if="selected != null" v-bind="selected" @close="closeModal" />
 	</div>
 </template>
 
@@ -50,7 +40,7 @@
 
 	export default {
 		name: 'Home',
-		
+
 		components: {
 			'blog-item': BlogItem,
 			'banner-item': BannerItem,
@@ -61,19 +51,20 @@
 			return {
 				posts: BlogPosts.posts,
 				selected: null,
-				fixed: [1,2,3,4,5],
+				fixed: [1, 2, 3, 4, 5],
 			};
 		},
 
 		computed: {
-			fixedPosts: function() {
+			fixedPosts: function () {
 				return this.posts.filter(post => this.fixed.includes(post.id));
-			}
+			},
 		},
 
 		methods: {
 			onPostClick(id) {
-				this.selected = this.posts.find(post=>post.id==id);
+				this.selected = this.posts.find(post => post.id == id);
+
 				document.documentElement.style.overflow = 'hidden';
 			},
 			closeModal() {
@@ -83,24 +74,34 @@
 		},
 
 		mounted() {
-			this.selected = this.posts.find(post=>post.id==this.$route.query.post);			
-		}
+			this.selected = this.posts.find(post => post.id == this.$route.query.post);
+		},
 	};
 </script>
 
-<style  lang="postcss" scoped>
-.fixed-grid {
-   	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-template-rows: theme('spacing.64') theme('spacing.64');
-	grid-template-areas:
-		"post1 post2 post3"
-		"post4 post2 post5";
-}
+<style lang="postcss" scoped>
+	.fixed-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: theme('spacing.72') theme('spacing.72');
+		grid-template-areas:
+			'post1 post2 post3'
+			'post4 post2 post5';
+	}
 
-.post-1 { grid-area: post1; }
-.post-2 { grid-area: post2; }
-.post-3 { grid-area: post3; }
-.post-4 { grid-area: post4; }
-.post-5 { grid-area: post5; }
+	.post-1 {
+		grid-area: post1;
+	}
+	.post-2 {
+		grid-area: post2;
+	}
+	.post-3 {
+		grid-area: post3;
+	}
+	.post-4 {
+		grid-area: post4;
+	}
+	.post-5 {
+		grid-area: post5;
+	}
 </style>
