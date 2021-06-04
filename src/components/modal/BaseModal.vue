@@ -17,7 +17,7 @@
 				</svg>
 			</button>
 		</div>
-		<div class="max-w-2xl px-5 pt-6 pb-4 bg-white rounded-lg sm:shadow">
+		<div class="h-full max-w-2xl px-5 pt-6 pb-4 bg-white rounded-lg sm:shadow sm:h-auto">
 			<div class="flex mb-4">
 				<div class="flex flex-col mx-auto mb-2">
 					<img
@@ -37,12 +37,12 @@
 				{{ content }}
 			</p>
 			<div class="flex items-center justify-between mt-5">
-				<div class="flex">
+				<div class="flex pb-3 sm:pb-0">
 					<span class="px-3 py-1 text-xs font-bold text-blue-600 uppercase bg-blue-200 rounded-full">
 						Saude
 					</span>
 				</div>
-				<div class="ml-1 font-light text-gray-500">
+				<div class="pb-3 ml-1 font-light text-gray-500 sm:pb-0">
 					<social-share :title="`${title}`" :id="id" :content="`${content}`"></social-share>
 				</div>
 			</div>

@@ -1,5 +1,5 @@
 <template>
-	<div class="flex justify-center bg-white">
+	<div class="flex justify-center bg-white" id="share">
 		<div class="flex flex-wrap items-center my-auto">
 			<div class="relative ml-24">
 				<button
@@ -145,5 +145,11 @@
 	.svg-icon polygon,
 	.svg-icon rect {
 		fill: #686666;
+	}
+
+	@supports (-webkit-touch-callout: none) {
+		.share {
+			display: none;
+		}
 	}
 </style>
