@@ -33,14 +33,12 @@
 					</div>
 				</div>
 			</div>
-			<p class="text-sm leading-snug text-justify text-gray-800 md:leading-normal sm:text-medium">
+			<p class="text-sm leading-snug text-justify text-gray-800 md:leading-normal sm:text-base">
 				{{ content }}
 			</p>
 			<div class="flex items-center justify-between mt-5">
 				<div class="flex pb-3 sm:pb-0">
-					<span class="px-3 py-1 text-xs font-bold text-blue-600 uppercase bg-blue-200 rounded-full">
-						Saude
-					</span>
+					<post-category :category-id="category"></post-category>
 				</div>
 				<div class="pb-3 ml-1 font-light text-gray-500 sm:pb-0">
 					<social-share :title="`${title}`" :id="id" :content="`${content}`"></social-share>
@@ -52,12 +50,14 @@
 
 <script>
 	import SocialShare from '../social/SocialShare';
+	import PostCategory from '../post/PostCategory';
 
 	export default {
 		name: 'BaseModal',
 
 		components: {
 			'social-share': SocialShare,
+			'post-category': PostCategory,
 		},
 
 		props: {
@@ -66,6 +66,10 @@
 				type: String,
 			},
 			id: {
+				required: true,
+				type: Number,
+			},
+			category: {
 				required: true,
 				type: Number,
 			},

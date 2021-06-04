@@ -34,6 +34,10 @@
 	import PostCategory from '../post/PostCategory';
 
 	export default {
+		components: {
+			'post-category': PostCategory,
+		},
+
 		props: {
 			id: {
 				required: true,
@@ -63,10 +67,6 @@
 				required: true,
 				type: String,
 			},
-		},
-
-		components: {
-			'post-category': PostCategory,
 		},
 
 		methods: {
