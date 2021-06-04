@@ -1,6 +1,10 @@
 <template>
 	<div class="relative h-full overflow-hidden bg-black cursor-pointer group" @click="onPostClick">
-		<img class="object-cover w-full h-full opacity-70 group-hover:opacity-60 " :src="require(`@/assets/img/blog/${image}`)" alt="">
+		<img
+			class="object-cover w-full h-full opacity-70 group-hover:opacity-60"
+			:src="require(`@/assets/img/blog/${image}`)"
+			alt=""
+		/>
 		<div class="absolute bottom-0 left-0 p-4">
 			<h3 class="font-bold text-white">{{ title }}</h3>
 			<span class="text-gray-100">{{ date }}</span>
@@ -9,7 +13,7 @@
 </template>
 
 <script>
-export default {
+	export default {
 		props: {
 			title: {
 				required: true,
@@ -34,5 +38,5 @@ export default {
 				this.$emit('postClicked', this.id);
 			},
 		},
-	}
+	};
 </script>

@@ -1,7 +1,14 @@
 <template>
-	<div class="flex max-w-5xl bg-white rounded-sm shadow cursor-pointer" @click="onPostClick">
+	<div
+		class="flex flex-col mx-4 bg-white rounded-sm shadow cursor-pointer  sm:flex-row xl:max-w-5xl lg:max-w-4xl md:max-w-2xl sm:mx-2"
+		@click="onPostClick"
+	>
 		<div>
-			<img class="object-cover max-w-xl mx-auto w-52 h-52" :src="require(`@/assets/img/blog/${image}`)" alt="" />
+			<img
+				class="object-cover w-full mx-auto sm:max-w-xl sm:w-52 h-52"
+				:src="require(`@/assets/img/blog/${image}`)"
+				alt=""
+			/>
 		</div>
 		<div class="px-4">
 			<div class="mt-4 mb-3">
@@ -13,11 +20,11 @@
 			<p class="overflow-hidden text-justify text-gray-800" max-lenght>
 				{{ content }}
 			</p>
-			<div class="flex items-baseline justify-between pt-2 mt-5 border-t">
+			<div class="flex items-baseline justify-between pt-2 mt-5 mb-2 border-t sm:mb-0">
 				<div class="flex">
-					<post-category :categoryId="category"></post-category>
+					<post-category :category-id="category"></post-category>
 				</div>
-				<div class="ml-1 font-light text-gray-500">{{ views }} Vizualizações</div>
+				<div class="ml-1 font-light text-gray-500">{{ views * 1 }} Vizualizações</div>
 			</div>
 		</div>
 	</div>

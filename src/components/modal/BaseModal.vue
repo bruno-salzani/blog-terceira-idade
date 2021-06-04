@@ -1,7 +1,7 @@
 <template>
-	<div class="fixed inset-0 z-20 flex items-center justify-center bg-black bg-opacity-90">
+	<div class="fixed inset-0 z-20 flex items-center justify-center px-4 pt-6 bg-black bg-opacity-90 md:px-0 sm:pt-0">
 		<div
-			class="absolute flex items-center justify-center w-10 h-10 rounded-full  top-5 right-5 hover:bg-white hover:bg-opacity-10"
+			class="absolute flex items-center justify-center w-10 h-10 rounded-full  top-2 right-2 sm:top-5 sm:right-5 hover:bg-white hover:bg-opacity-10"
 		>
 			<button class="text-white" type="button" @click="close">
 				<svg

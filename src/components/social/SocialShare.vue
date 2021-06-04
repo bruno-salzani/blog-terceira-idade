@@ -15,7 +15,7 @@
 				</button>
 
 				<div
-					class="absolute right-0 z-20 hidden w-48 mt-0 overflow-hidden bg-white border border-gray-100 rounded shadow-lg  sharebtn-dropdown"
+					class="absolute right-0 z-20 hidden w-48 mt-0 overflow-hidden bg-white border border-gray-100 rounded shadow-lg  bottom-6 sharebtn-dropdown"
 				>
 					<ShareNetwork
 						network="facebook"
