@@ -10,7 +10,7 @@
 			></banner-item>
 		</div>
 		<main class="pb-20 mx-auto">
-			<div class="flex flex-col items-center gap-10">
+			<div class="flex flex-col items-center space-y-10">
 				<div class="py-20 text-center">
 					<h2 class="mb-2 text-lg font-thin tracking-wider uppercase lg:text-xl">
 						Dicas para a terceira idade
