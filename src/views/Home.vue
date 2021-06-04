@@ -1,5 +1,5 @@
 <template>
-	<div class="bg-gray-100">
+	<div class="pt-20 mt-2 bg-gray-100" id="banner">
 		<div>
 			<div class="fixed-grid">
 				<banner-item
@@ -20,12 +20,12 @@
 					</h1>
 					<span class="px-10 border-b-4 border-gray-700"></span>
 				</div>
-				<blog-item
+				<base-post
 					v-for="(post, index) in posts"
 					:key="index"
 					v-bind="post"
 					@postClicked="onPostClick"
-				></blog-item>
+				></base-post>
 			</div>
 		</main>
 		<BaseModal v-if="selected != null" v-bind="selected" @close="closeModal" />
@@ -33,16 +33,16 @@
 </template>
 
 <script>
-	import BlogItem from '../components/blog/BlogItem';
-	import BannerItem from '../components/shared/BannerItem';
-	import BaseModal from '../components/shared/BaseModal';
 	import BlogPosts from '../repository/blog.json';
+	import BasePost from '../components/post/BasePost';
+	import BannerItem from '../components/banner/BannerItem';
+	import BaseModal from '../components/modal/BaseModal';
 
 	export default {
 		name: 'Home',
 
 		components: {
-			'blog-item': BlogItem,
+			'base-post': BasePost,
 			'banner-item': BannerItem,
 			BaseModal,
 		},
