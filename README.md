@@ -1,5 +1,3 @@
-# blog-enfermagem-senac
-
 ## Introdução
 
 ### Sobre mim
