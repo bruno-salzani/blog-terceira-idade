@@ -1,5 +1,5 @@
 <template>
-	<div class="pt-20 mt-2 bg-gray-100" id="banner">
+	<div class="pt-16 mt-2 bg-gray-100 md:pt-20" id="banner">
 		<div class="fixed-grid">
 			<banner-item
 				v-for="(post, index) in fixedPosts"
@@ -9,16 +9,14 @@
 				@postClicked="onPostClick"
 			></banner-item>
 		</div>
-		<main class="pb-20 mx-auto">
-			<div class="flex flex-col items-center space-y-10">
-				<div class="py-20 text-center">
-					<h2 class="mb-2 text-lg font-thin tracking-wider uppercase lg:text-xl">
-						Dicas para a terceira idade
-					</h2>
-					<h1 class="font-serif text-3xl font-bold tracking-tight text-gray-700 lg:text-5xl md:text-4xl">
+		<main class="pb-16 mx-auto">
+			<div class="flex flex-col items-center space-y-8 md:space-y-10">
+				<div class="py-10 text-center md:py-20">
+					<h2 class="mb-2 font-thin tracking-wider uppercase md:text-xl">Dicas para a terceira idade</h2>
+					<h1 class="font-serif text-2xl font-bold tracking-tight text-gray-700 lg:text-5xl md:text-4xl">
 						Envelhecendo com qualidade de vida
 					</h1>
-					<span class="px-6 border-b-4 border-gray-700 lg:px-10 md:px-8"></span>
+					<span class="px-6 border-b-2 border-gray-700 md:border-b-4 lg:px-10 md:px-8"></span>
 				</div>
 				<base-post
 					v-for="(post, index) in posts"
@@ -109,7 +107,7 @@
 		.fixed-grid {
 			display: grid;
 			grid-template-columns: 1fr;
-			grid-template-rows: theme('spacing.64') theme('spacing.64');
+			grid-template-rows: theme('spacing.52') theme('spacing.52');
 			grid-template-areas:
 				'post1 post2'
 				'post3';

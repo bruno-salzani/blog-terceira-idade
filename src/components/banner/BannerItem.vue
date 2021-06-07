@@ -6,8 +6,8 @@
 			alt=""
 		/>
 		<div class="absolute bottom-0 left-0 p-4">
-			<h3 class="font-bold text-white">{{ title }}</h3>
-			<span class="text-gray-100">{{ date }}</span>
+			<h3 class="text-sm font-bold text-white md:text-base">{{ title }}</h3>
+			<span class="text-sm text-gray-100">{{ date }}</span>
 		</div>
 	</div>
 </template>

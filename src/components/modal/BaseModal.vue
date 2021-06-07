@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="fixed inset-0 z-20 flex items-center justify-center px-4 pt-6 overflow-y-auto bg-white  sm:bg-black sm:bg-opacity-90 md:px-0 sm:pt-0"
+		class="fixed inset-0 z-20 flex items-center justify-center pt-6 overflow-y-auto bg-white  sm:bg-black sm:bg-opacity-90 md:px-0 sm:pt-0"
 	>
 		<div
 			class="absolute flex items-center justify-center w-10 h-10 rounded-full  top-2 right-2 sm:top-5 sm:right-5 hover:bg-white hover:bg-opacity-10"
@@ -33,7 +33,7 @@
 					</div>
 				</div>
 			</div>
-			<p class="text-sm leading-snug text-justify text-gray-800 md:leading-normal sm:text-base">
+			<p class="text-justify text-gray-800">
 				{{ content }}
 			</p>
 			<div class="flex items-center justify-between mt-5">
