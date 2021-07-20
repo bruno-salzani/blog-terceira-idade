@@ -102,7 +102,7 @@
 	.post-5 {
 		grid-area: post5;
 	}
-	@media (max-width: 1281px) {
+	@media (max-width: 1381px) {
 		.fixed-grid {
 			display: grid;
 			grid-template-columns: 1fr 1fr 1fr;
