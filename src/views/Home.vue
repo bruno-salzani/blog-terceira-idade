@@ -102,7 +102,16 @@
 	.post-5 {
 		grid-area: post5;
 	}
-
+	@media (max-width: 1281px) {
+		.fixed-grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			grid-template-rows: theme('spacing.52') theme('spacing.52');
+			grid-template-areas:
+				'post1 post2 post3'
+				'post4 post2 post5';
+		}
+	}
 	@media (max-width: 768px) {
 		.fixed-grid {
 			display: grid;
