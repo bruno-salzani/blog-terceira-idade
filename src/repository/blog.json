@@ -1,13 +1,22 @@
 {
 	"posts": [
 		{
+			"id": 11,
+			"title": "Como se prevenir contra a COVID 19",
+			"category": 2,
+			"views": 2,
+			"date": "17 de Agosto 2021",
+			"image": "covid_cuidados.jpg",
+			"content": "Lave suas mãos com frequência. Use sabão e água ou álcool em gel. Mantenha uma distância segura de pessoas que estiverem tossindo ou espirrando. Use máscara quando não for possível manter o distanciamento físico. Não toque nos olhos. no nariz ou na boca. Procure atendimento médico se tiver febre, tosse e dificuldade para respirar."
+		},
+		{
 			"id": 10,
 			"title": "A importância de tomar a vacina da covid",
 			"category": 1,
 			"views": 3,
-			"date": "17 de Agosto 2021",
+			"date": "14 de Agosto 2021",
 			"image": "vacina_covid.jpg",
-			"content": "A importância de tomar a vacina da covid é reduzir número de pessoas com sintomas, internações, casos graves e óbitos. Os pacientes idosos estão sendo os mais afetados pela pandemia do novo corona vírus, (COVID 19). A fragilidade na saúde, principalmente por serem mais vulneráveis as doenças infectocontagiosas, que afeta fortemente sua saúde e qualidade de vida. A primeira e segunda dose são extremamente importantes. Os sintomas mais comuns são febre, tosse seca, cansaço. Os sintomas menos comuns são dores e desconfortos, dor de garganta, diarreia, conjuntivite, dor de cabeça, perda de paladar ou olfato, erupção cutânea na pele ou descoloração dos dedos das mãos ou dos pés. Os sintomas graves são dificuldade de respirar ou falta de ar, dor ou pressão no peito, perda de fala ou movimento"
+			"content": "A importância de tomar a vacina da covid é reduzir número de pessoas com sintomas, internações, casos graves e óbitos. Os pacientes idosos estão sendo os mais afetados pela pandemia do novo corona vírus, (COVID 19). A fragilidade na saúde, principalmente por serem mais vulneráveis as doenças infectocontagiosas, que afeta fortemente sua saúde e qualidade de vida. A primeira e segunda dose são extremamente importantes. Os sintomas mais comuns são: febre, tosse seca, cansaço. Os sintomas menos comuns são: dores e desconfortos, dor de garganta, diarreia, conjuntivite, dor de cabeça, perda de paladar ou olfato, erupção cutânea na pele ou descoloração dos dedos das mãos ou dos pés. Os sintomas graves são: dificuldade de respirar ou falta de ar, dor ou pressão no peito, perda de fala ou movimento"
 		},
 		{
 			"id": 9,
