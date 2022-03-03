@@ -3,6 +3,7 @@
 		<div class="flex justify-between">
 			<span class="text-xl font-thin tracking-wider uppercase">Terceira Idade</span>
 			<a class="text-lg cursor-pointer" href="#banner" v-smooth-scroll>Inicio</a>
+			<a class="text-lg cursor-pointer" href="#banner" v-smooth-scroll>Agende sua vacina</a>
 		</div>
 	</header>
 </template>
