@@ -24,7 +24,7 @@
 				<div class="flex">
 					<post-category :category-id="category"></post-category>
 				</div>
-				<div class="ml-1 text-sm font-light text-gray-500 md:text-md">{{ views * 3 }} Visualizações</div>
+				<div class="ml-1 text-sm font-light text-gray-500 md:text-md">{{ views * 4 }} Visualizações</div>
 			</div>
 		</div>
 	</div>
