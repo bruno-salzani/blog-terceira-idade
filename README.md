@@ -1,10 +1,3 @@
-## Introdução
-
-### Sobre mim
-* Nome: Bruno Borges Salzani
-* Linkedin: <a href="https://www.linkedin.com/in/brunosalzani/" target="_blank">brunosalzani</a>
-* Email: <a href="mailto:bruno.salzani@hotmail.com" target="_blank">bruno.salzani@hotmail.com</a>
-
 ## Projeto
 
 ### Descrição
